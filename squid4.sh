@@ -138,6 +138,7 @@ cd /etc/squid/ssl_certs/
 
 openssl req -new -newkey rsa:2048 -days 3652 -nodes -x509 -keyout squid.pem  -subj "/C=ID/ST=Lampung/L=Kalianda/O=(C) 2017 RWS/OU=RWS.NET/CN=RWS/emailAddress=eko.hendratno@gmail.com" -out squid.pem
 openssl x509 -in squid.pem -outform DER -out squid.der
+openssl x509 -outform der -in squid.pem -out squid.crt
 
 cd
 /usr/lib/squid/ssl_crtd -c -s /etc/squid/ssl_db
